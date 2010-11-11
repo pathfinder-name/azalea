@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+        	<groupId>name.pathfinder.azalea.build</groupId>
+	        <artifactId>library-settings</artifactId>
+		<version>0.1.0.SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.freemarker</groupId>
+	<artifactId>name.pathfinder.azalea.freemarker</artifactId>
+	<name>Azalea Freemarker Library</name>
+	<packaging>bundle</packaging>
+	<version>2.3.16</version>
+
+	<properties>
+		<bundle.symbolicName>${project.artifactId}</bundle.symbolicName>
+		<bundle.namespace>freemarker</bundle.namespace>
+		<bundle.version>${project.version}</bundle.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+    <dependency>
+      <groupId>javax.el</groupId>
+      <artifactId>com.springsource.javax.el</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>com.springsource.javax.servlet</artifactId>
+      <version>2.5.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>com.springsource.javax.servlet.jsp</artifactId>
+      <version>2.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.log4j</groupId>
+      <artifactId>com.springsource.org.apache.log4j</artifactId>
+      <version>1.2.15</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>com.springsource.org.apache.tools.ant</artifactId>
+      <version>1.7.0</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xalan</groupId>
+      <artifactId>com.springsource.org.apache.xalan</artifactId>
+      <version>2.7.0</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.dom4j</groupId>
+      <artifactId>com.springsource.org.dom4j</artifactId>
+      <version>1.6.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jaxen</groupId>
+      <artifactId>com.springsource.org.jaxen</artifactId>
+      <version>1.1.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>com.springsource.org.jdom</artifactId>
+      <version>1.0.0</version>
+      <optional>true</optional>
+    </dependency>
+	</dependencies>
+
+</project>

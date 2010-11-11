@@ -1,0 +1,13 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+ 
+Export-Package: !flexjson.test*,\
+ flexjson*;version="${bundle.version}"
+ 
+
+DynamicImport-Package: *
+
+Import-Package: !${bundle.namespace}*,\
+ *

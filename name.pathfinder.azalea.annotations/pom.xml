@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>name.pathfinder.azalea.build</groupId>
+		<artifactId>bundle-settings</artifactId>
+		<version>0.1.0.SNAPSHOT</version>
+		<relativePath>../azalea-build/bundle/</relativePath>
+	</parent>
+
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>name.pathfinder.azalea</groupId>
+	<artifactId>name.pathfinder.azalea.annotations</artifactId>
+	<version>0.1.0.SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Azalea::Annotations</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>spring-osgi-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>spring-osgi-annotation</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
+

@@ -1,0 +1,16 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Embed-Dependency:\
+ ognl;groupId=ognl;inline=true
+ 
+Export-Package:${bundle.namespace}*;version="${project.version}",\
+ !${bundle.namespace}.internal*
+
+
+DynamicImport-Package: *
+
+Import-Package: !${bundle.namespace}*,\
+ javassist*;version="3.7";resolution:=optional,\
+ *

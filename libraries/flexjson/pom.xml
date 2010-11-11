@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>name.pathfinder.azalea.build</groupId>
+		<artifactId>library-settings</artifactId>
+		<version>0.1.0.SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sf.flexjson</groupId>
+	<artifactId>name.pathfinder.azalea.flexjson</artifactId>
+	<name>Flexjson 2.x Library</name>
+	<packaging>bundle</packaging>
+	<version>2.0.0</version>
+
+	<properties>
+		<bundle.symbolicName>name.pathfinder.azalea.flexjson</bundle.symbolicName>
+		<bundle.namespace>flexjson</bundle.namespace>
+		<bundle.version>2.0.0</bundle.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.flexjson</groupId>
+			<artifactId>flexjson</artifactId>
+			<version>2.0</version>
+		</dependency>
+	</dependencies>
+
+</project>

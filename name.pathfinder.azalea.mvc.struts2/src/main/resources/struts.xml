@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.freemarker.templatesCache" value="false" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.ui.theme" value="xhtml" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.custom.i18n.resources" value="messages" />
+	<constant name="struts.convention.action.fileProtocols" value="jar,bundle"></constant>
+	<constant name="struts.convention.action.packages" value="name.pathfinder.azalea" />
+	<constant name="struts.convention.package.locators.basePackage" value="name.pathfinder.azalea" />
+	<constant name="struts.convention.redirect.to.slash" value="true" />
+	<constant name="struts.convention.default.parent.package" value="azalea-default" />
+	<constant name="struts.convention.result.path" value="/views/" />
+
+    <constant name="struts.staticContentLoader" value="name.pathfinder.azalea.mvc.struts2.internal.AzaleaStaticRContentLoader" />
+	<constant name="azalea.plugin.filename" value="azalea-plugin.xml" />
+	<constant name="struts.freemarker.manager.classname" value="name.pathfinder.azalea.mvc.struts2.internal.AzaleaFreemarkerManager" />
+	<constant name="struts.convention.actionConfigBuilder" value="azalea" />
+	<bean type="org.apache.struts2.convention.ActionConfigBuilder" name="azalea" class="name.pathfinder.azalea.mvc.struts2.internal.OsgiBasedActionConfigBuilder" />
+	<bean name="azalea.osgi.configurationProvider" type="com.opensymphony.xwork2.config.PackageProvider" class="name.pathfinder.azalea.mvc.struts2.internal.OsgiBundleConfigurationProvider" />
+	<bean type="name.pathfinder.azalea.mvc.struts2.BundleMappingBuilder" class="name.pathfinder.azalea.mvc.struts2.internal.BundleMappingBuilderImpl"></bean>
+	
+	<bean name="azalea.jspRuntime" type="name.pathfinder.azalea.mvc.struts2.embeddedjsp.JSPRuntime" class="name.pathfinder.azalea.mvc.struts2.embeddedjsp.JSPRuntimeImpl" />
+	
+	<bean name="azalea.osgi" type="com.opensymphony.xwork2.ObjectFactory" class="name.pathfinder.azalea.mvc.struts2.internal.OsgiSpringObjectFactory" />
+	<constant name="struts.objectFactory" value="azalea.osgi" />
+    <constant name="azalea.objectFactory.delegate" value="struts" />
+	
+	
+	<package name="azalea-default" extends="struts-default" abstract="yes">
+		<result-types>
+			<result-type name="dispatcher" class="name.pathfinder.azalea.mvc.struts2.embeddedjsp.EmbeddedJSPResult" />
+		</result-types>
+		
+				
+		<interceptors>
+			<interceptor name="osgi" class="name.pathfinder.azalea.mvc.struts2.internal.OsgiInterceptor" />
+			<interceptor-stack name="azaleaStack">
+				<interceptor-ref name="osgi" />
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="azaleaStack" />
+	</package>
+</struts>

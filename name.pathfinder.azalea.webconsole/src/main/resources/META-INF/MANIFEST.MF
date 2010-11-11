@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Export-Package: name.pathfinder.azalea.webconsole.actions;version="0.1
+ .0.SNAPSHOT";uses:="com.opensymphony.xwork2.config,com.opensymphony.x
+ work2.inject,org.apache.struts2.convention.annotation,org.apache.stru
+ ts2.dispatcher,org.osgi.framework,org.springframework.context.annotat
+ ion,org.springframework.osgi.context,org.springframework.stereotype",
+ views.webconsole;version="0.1.0.SNAPSHOT"
+DynamicImport-Package: *
+Bundle-Version: 0.1.0.SNAPSHOT
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: Azalea WebConsole
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: name.pathfinder.azalea.webconsole
+Web-ContextPath: azalea
+Import-Package: com.opensymphony.xwork2.config;version="[2.2,2.3)",com
+ .opensymphony.xwork2.inject;version="[2.2,2.3)",org.apache.struts2.co
+ nvention.annotation;version="[2.2,2.3)",org.apache.struts2.dispatcher
+ ;version="[2.2,2.3)",org.osgi.framework;version="1.0",org.slf4j;versi
+ on="1.5",org.springframework.context.annotation;version="[3.0,4.0)",o
+ rg.springframework.osgi.context;version="1.2.1",org.springframework.s
+ tereotype;version="[3.0,4.0)"
+

@@ -1,0 +1,25 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: name.pathfinder.azalea.mvc.struts2
+Bundle-Version: 0.1.0
+Bundle-Name: Azalea MVC Struts2
+Web-ContextPath: azalea
+Excluded-Imports: 
+ org.springframework.osgi.test.*,
+ org.springframework.test.*
+Import-Package: org.slf4j;version="1.5",
+ org.apache;version="1.0";resolution:=optional,
+ org.apache.commons.lang;version="2.4";resolution:=optional,
+ org.apache.commons.io;version="1.4";resolution:=optional,
+ org.apache.commons.lang.xwork;version="[2.2,2.3)";resolution:=optional,
+ javax.tools;version="[0,0]";resolution:=optional
+Import-Template: org.springframework.osgi.*;version="1.2.1",
+ org.springframework.*;version="[3.0,4.0)",
+ org.apache.struts2.*;version="[2.2,2.3)",
+ com.opensymphony.xwork2.*;version="[2.2,2.3)",
+ javax.servlet.*;version="[2.5,3.0)",
+ javax.servlet.jsp.*;version="[2.1,2.2)",
+ freemarker.*;version="2.3.16";resolution:=optional,
+ org.osgi.*;version="1.0"
+Bundle-ClassPath: .,WEB-INF/classes
+Excluded-Exports: name.pathfinder.azalea.mvc.struts2.internal.*
+DynamicImport-Package: *

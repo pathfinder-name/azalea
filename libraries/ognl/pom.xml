@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+        	<groupId>name.pathfinder.azalea.build</groupId>
+	        <artifactId>library-settings</artifactId>
+		<version>0.1.0.SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.ognl</groupId>
+	<artifactId>name.pathfinder.azalea.ognl</artifactId>
+	<name>Azalea OGNL Library</name>
+	<packaging>bundle</packaging>
+	<version>3.0.0</version>
+
+	<properties>
+		<bundle.symbolicName>name.pathfinder.azalea.ognl</bundle.symbolicName>
+		<bundle.namespace>ognl</bundle.namespace>
+		<bundle.version>${project.version}</bundle.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>ognl</groupId>
+			<artifactId>ognl</artifactId>
+			<version>3.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.javassist</groupId>
+		    <artifactId>com.springsource.javassist</artifactId>
+		    <version>3.9.0.GA</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+</project>

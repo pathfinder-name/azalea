@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>name.pathfinder.azalea.build</groupId>
+		<artifactId>shared-build-settings</artifactId>
+		<version>0.1.0.SNAPSHOT</version>
+	</parent>
+
+	<groupId>name.pathfinder.azalea.build</groupId>
+	<artifactId>war-settings</artifactId>
+	<packaging>pom</packaging>
+	<name>Azalea War Settings</name>
+
+	<build>
+		<plugins>
+<!--
+			<plugin>
+				<groupId>com.springsource.bundlor</groupId>
+				<artifactId>com.springsource.bundlor.maven</artifactId>
+                                <executions>
+                                        <execution>
+                                                <id>bundlor</id>
+                                                <goals>
+                                                        <goal>bundlor</goal>
+                                                </goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<outputPath>${basedir}/src/main/webapp/META-INF</outputPath>
+						</configuration>
+                                        </execution>
+                                </executions>
+			</plugin>
+-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestFile>
+							${basedir}/src/main/webapp/META-INF/MANIFEST.MF
+						</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*Tests.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/Abstract*.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

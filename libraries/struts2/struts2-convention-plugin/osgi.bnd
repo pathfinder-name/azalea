@@ -1,0 +1,27 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Embed-Dependency: \
+ struts2-convention-plugin;groupId=org.apache.struts;inline=true
+
+
+ 
+Export-Package: \
+ ${bundle.namespace}*;version=${bundle.version},\
+ .
+
+DynamicImport-Package: *
+
+Import-Package: \
+ !${bundle.namespace}*,\
+ com.opensymphony.xwork2*;version="2.2.1";resolution:=optional,\
+ org.apache.commons.lang.xwork*;version="2.2.1";resolution:=optional,\
+ org.apache.struts2*;version="2.2.1";resolution:=optional,\
+ org.apache.xml.utils*;resolution:=optional,\
+ org.mozilla.javascript*;resolution:=optional,\
+ org.w3c.dom*;version="[0,0]",org.xml.sax*;version="[0,0]",\
+ javax.servlet;version="[2.4,3.0)";resolution:=optional,\
+ *
+
+Fragment-Host: name.pathfinder.azalea.struts2;bundle-version="2.2.1"

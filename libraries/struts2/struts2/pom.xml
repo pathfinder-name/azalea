@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+        <parent>
+                <groupId>name.pathfinder.azalea.build</groupId>
+                <artifactId>library-settings</artifactId>
+                <version>0.1.0.SNAPSHOT</version>
+        </parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.struts</groupId>
+	<name>Azalea Struts2 Host Library</name>
+	<artifactId>name.pathfinder.azalea.struts2</artifactId>
+	<version>2.2.1</version>
+	<packaging>bundle</packaging>
+
+        <properties>
+                <bundle.symbolicName>name.pathfinder.azalea.struts2</bundle.symbolicName>
+                <bundle.namespace>name.pathfinder.azalea.struts2</bundle.namespace>
+                <bundle.version>2.2.1</bundle.version>
+        </properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.struts.xwork</groupId>
+			<artifactId>xwork-core</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-test</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+    <dependency>
+      <groupId>org.ognl</groupId>
+      <artifactId>name.pathfinder.azalea.ognl</artifactId>
+      <version>3.0</version>
+    </dependency>
+<dependency>
+    <groupId>org.objectweb.asm</groupId>
+    <artifactId>com.springsource.org.objectweb.asm</artifactId>
+    <version>3.1.0</version>
+    <optional>true</optional>
+</dependency>
+<dependency>
+    <groupId>org.objectweb.asm</groupId>
+    <artifactId>com.springsource.org.objectweb.asm.tree</artifactId>
+    <version>3.1.0</version>
+      <optional>true</optional>
+</dependency>
+
+                <dependency>
+                        <groupId>org.apache.struts</groupId>
+                        <artifactId>struts2-core</artifactId>
+                        <version>${project.version}</version>
+                        <scope>provided</scope>
+                        <optional>true</optional>
+                        <exclusions>
+                                <exclusion>
+                                        <groupId>org.springframework</groupId>
+                                        <artifactId>spring-test</artifactId>
+                                </exclusion>
+                        </exclusions>
+                </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>name.pathfinder.azalea.freemarker</artifactId>
+            <version>2.3.16</version>
+            <scope>provided</scope>
+        </dependency>
+
+<!--
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+      <optional>true</optional>
+    </dependency>
+
+   <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>2.5.6</version>
+      <optional>true</optional>
+    </dependency>
+-->
+
+	</dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+		<createSourcesJar>true</createSourcesJar>
+              <artifactSet>
+		<includes>
+			<include>org.apache.struts.xwork:xwork-core</include>
+			<include>org.apache.struts:struts2-core</include>
+		</includes>
+<!--
+                <excludes>
+                  <exclude>classworlds:classworlds</exclude>
+                  <exclude>junit:junit</exclude>
+                  <exclude>jmock:*</exclude>
+                  <exclude>*:xml-apis</exclude>
+                  <exclude>org.apache.maven:lib:tests</exclude>
+                  <exclude>log4j:log4j:jar:</exclude>
+                </excludes>
+-->
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
